@@ -6,15 +6,15 @@ The application uses a lightweight single-service architecture:
 
 ```mermaid
 flowchart LR
-    User[Employee / Browser] --> UI[FastAPI Web UI]
-    UI --> API[FastAPI /chat and /health]
-    API --> ORCH[Agent Orchestrator]
-    ORCH --> MCP[HR MCP Client]
-    MCP --> Server[HR MCP Server]
-    Server --> RAG[RAG Index / Local Search]
-    Server --> DB[SQLite Mock HR DB]
-    RAG --> Corpus[Policy Corpus]
-    ORCH --> LLM[LLM provider if used for answer synthesis]
+    User["Employee / Browser"] --> UI["FastAPI Web UI"]
+    UI --> API["FastAPI /chat and /health"]
+    API --> ORCH["Agent Orchestrator"]
+    ORCH --> MCP["HR MCP Client"]
+    MCP --> Server["HR MCP Server"]
+    Server --> RAG["RAG Index / Local Search"]
+    Server --> DB["SQLite Mock HR DB"]
+    RAG --> Corpus["Policy Corpus"]
+    ORCH --> LLM["LLM Provider (Synthesis)"]
 ```
 
 ## Design choices

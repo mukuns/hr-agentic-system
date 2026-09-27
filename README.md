@@ -33,26 +33,26 @@ The project implements a modular, decoupled architecture adhering to the Model C
 
 ```mermaid
 flowchart TD
-    User([Employee / HR User]) <--> UI[Web Chat UI / Static Frontend]
-    UI <--> API[FastAPI Web Service: /chat & /health]
+    User["Employee / HR User"] <--> UI["Web Chat UI / Static Frontend"]
+    UI <--> API["FastAPI Web Service (/chat & /health)"]
     
-    subgraph Agentic Orchestration Layer
-        API <--> Orchestrator[Agent Orchestrator]
-        Orchestrator --> IntentClassifier{Intent Classifier & Safety Guardrails}
+    subgraph Orchestration ["Agentic Orchestration Layer"]
+        API <--> Orchestrator["Agent Orchestrator"]
+        Orchestrator --> IntentClassifier{"Intent Classifier & Safety Guardrails"}
     end
 
-    subgraph Model Context Protocol MCP Layer
-        Orchestrator <--> MCPClient[HR MCP Client]
-        MCPClient <--> MCPServer[HR MCP Server]
+    subgraph MCPLayer ["Model Context Protocol (MCP) Layer"]
+        Orchestrator <--> MCPClient["HR MCP Client"]
+        MCPClient <--> MCPServer["HR MCP Server"]
     end
 
-    subgraph Tools & Knowledge Backends
-        MCPServer <--> RAGIndex[(TF-IDF Policy RAG Index)]
-        MCPServer <--> MockDB[(SQLite Synthetic HR DB)]
-        RAGIndex <--> Corpus[20 HR Policy Markdown Docs]
+    subgraph Storage ["Tools & Knowledge Backends"]
+        MCPServer <--> RAGIndex[("TF-IDF Policy RAG Index")]
+        MCPServer <--> MockDB[("SQLite Synthetic HR DB")]
+        RAGIndex <--> Corpus["20 HR Policy Markdown Docs"]
     end
 
-    IntentClassifier -- Out of Scope / Unsafe --> Refusal[Grounded Policy Refusal]
+    IntentClassifier -->|"Out of Scope or Unsafe"| Refusal["Grounded Policy Refusal"]
 ```
 
 ### Architectural Separation
