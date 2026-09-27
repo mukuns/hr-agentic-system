@@ -83,7 +83,7 @@ The MCP server exposes **7 structured tools** consumed by the agent orchestrator
 
 ## 🧪 Grader Reproduction Guide: Two Agentic Demo Workflows
 
-The grader can test these end-to-end multi-step agentic workflows directly in the web UI (`http://localhost:8000/`) or via `curl` / API client.
+The grader can test these end-to-end multi-step agentic workflows directly in the **live deployed Web UI ([https://hr-agentic-system.onrender.com/](https://hr-agentic-system.onrender.com/))**, locally at `http://localhost:8000/`, or via `curl` / API client.
 
 ### Demo Task 1: Multi-Step PTO Request & Guidance
 Demonstrates multi-step reasoning, employee lookup, balance checking, policy retrieval, balance validation, and safety confirmation guardrails.
