@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantic HR Agentic Assistant | Policy & Operations</title>
+  <meta name="description" content="Agentic AI HR Assistant with RAG policy retrieval and MCP tool orchestration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">Quantic HR Agentic System</h1>
+          <p class="brand-subtitle">Autonomous Policy RAG & MCP Multi-Step Operations</p>
+        </div>
+      </div>
+      
+      <div class="header-status">
+        <div id="healthBadge" class="status-badge checking">
+          <span class="pulse-dot"></span>
+          <span id="healthText">Verifying MCP...</span>
+        </div>
+        <button id="toggleTraceBtn" class="secondary-btn" title="Toggle Operational Trace Panel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <span class="btn-text">MCP Tool Trace</span>
+          <span id="traceCounterBadge" class="counter-badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+      <!-- Chat Container -->
+      <section class="chat-container">
+        <div id="messagesList" class="messages-list">
+          <!-- Welcome Message -->
+          <div class="message assistant-message">
+            <div class="avatar assistant-avatar">HR</div>
+            <div class="message-bubble">
+              <div class="bubble-header">
+                <span class="sender-name">HR Agentic Assistant</span>
+                <span class="time-label">Just now</span>
+              </div>
+              <div class="bubble-body">
+                <p>Hello! I am your <strong>Quantic HR Agent</strong>. I combine real-time <strong>RAG search across 20 HR policy documents</strong> with <strong>MCP tool automation</strong>.</p>
+                <p>How can I assist you today? You can ask policy questions, verify your PTO balance, or check remote work eligibility.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Action Suggestion Chips -->
+        <div class="quick-prompts">
+          <button class="chip" data-prompt="What is my PTO balance and can I take 3 days off? I am Marcus Chen EMP-002">
+            📅 Check PTO (EMP-002)
+          </button>
+          <button class="chip" data-prompt="Am I eligible for remote work? My employee ID is EMP-004">
+            🏠 Remote Work Eligibility (EMP-004)
+          </button>
+          <button class="chip" data-prompt="What are the rules for submitting business meal expenses and receipts over $25?">
+            🍽️ Meal & Expense Policy
+          </button>
+          <button class="chip" data-prompt="How does 401(k) company matching and vesting work?">
+            💰 401(k) Matching Rules
+          </button>
+          <button class="chip" data-prompt="How do I repair a flat bicycle tire?">
+            🛡️ Test Out-of-Scope Guardrail
+          </button>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="chat-input-area">
+          <form id="chatForm" class="input-form">
+            <div class="input-wrapper">
+              <textarea 
+                id="messageInput" 
+                rows="1" 
+                placeholder="Ask an HR policy question or workflow request (e.g., 'Check my PTO balance, EMP-002')..." 
+                maxlength="2000"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" id="sendBtn" class="send-btn" title="Send Message">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+          <div class="input-footer">
+            <span>Press Enter to send, Shift+Enter for new line. Max 2,000 characters.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Operational Trace Sidebar (Collapsible) -->
+      <aside id="tracePanel" class="trace-panel">
+        <div class="trace-header">
+          <div class="trace-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <h3>MCP Tool Execution Trace</h3>
+          </div>
+          <button id="closeTraceBtn" class="icon-btn" title="Close Panel">&times;</button>
+        </div>
+
+        <div class="trace-content">
+          <div id="traceEmptyState" class="empty-trace">
+            <p>No tool calls executed for the latest query (RAG-only or direct answer).</p>
+          </div>
+          <div id="traceEntries" class="trace-entries"></div>
+
+          <!-- Citations Sub-Section -->
+          <div class="citations-section">
+            <h4 class="sub-heading">Source Policy Citations</h4>
+            <div id="citationsList" class="citations-list">
+              <p class="empty-note">Citations will appear when policy documents are retrieved.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

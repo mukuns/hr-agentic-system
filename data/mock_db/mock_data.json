@@ -1,0 +1,268 @@
+{
+  "employees": [
+    {
+      "employee_id": "EMP-001",
+      "name": "Eleanor Vance",
+      "department": "Executive",
+      "role": "Chief Technology Officer",
+      "manager": null,
+      "office_location": "New York, NY",
+      "employment_type": "full-time",
+      "hire_date": "2020-01-15",
+      "tenure_months": 56,
+      "pto_balance": {
+        "accrued_days": 25,
+        "used_days": 10,
+        "remaining_days": 15
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "enrolled",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-002",
+      "name": "Marcus Chen",
+      "department": "Engineering",
+      "role": "Lead Software Engineer",
+      "manager": "EMP-001",
+      "office_location": "San Francisco, CA",
+      "employment_type": "full-time",
+      "hire_date": "2021-04-10",
+      "tenure_months": 41,
+      "pto_balance": {
+        "accrued_days": 22,
+        "used_days": 6,
+        "remaining_days": 16
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "waived",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-003",
+      "name": "Sophia Rodriguez",
+      "department": "Human Resources",
+      "role": "HR People Partner",
+      "manager": "EMP-001",
+      "office_location": "Austin, TX",
+      "employment_type": "full-time",
+      "hire_date": "2022-09-01",
+      "tenure_months": 24,
+      "pto_balance": {
+        "accrued_days": 18,
+        "used_days": 18,
+        "remaining_days": 0
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "enrolled",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-004",
+      "name": "Liam Gallagher",
+      "department": "Engineering",
+      "role": "Frontend Developer",
+      "manager": "EMP-002",
+      "office_location": "San Francisco, CA",
+      "employment_type": "full-time",
+      "hire_date": "2024-06-15",
+      "tenure_months": 3,
+      "pto_balance": {
+        "accrued_days": 5,
+        "used_days": 1,
+        "remaining_days": 4
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "waived",
+        "vision": "waived",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-005",
+      "name": "Amina Patel",
+      "department": "Workplace Operations",
+      "role": "Facilities Operations Specialist",
+      "manager": "EMP-003",
+      "office_location": "New York, NY",
+      "employment_type": "full-time",
+      "hire_date": "2021-11-20",
+      "tenure_months": 34,
+      "pto_balance": {
+        "accrued_days": 20,
+        "used_days": 8,
+        "remaining_days": 12
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "enrolled",
+        "retirement_contribution": "waived"
+      }
+    },
+    {
+      "employee_id": "EMP-006",
+      "name": "David Kim",
+      "department": "Engineering",
+      "role": "DevOps Consultant",
+      "manager": "EMP-002",
+      "office_location": "Remote",
+      "employment_type": "contractor",
+      "hire_date": "2023-05-01",
+      "tenure_months": 16,
+      "pto_balance": {
+        "accrued_days": 0,
+        "used_days": 0,
+        "remaining_days": 0
+      },
+      "benefits": {
+        "health_plan": "waived",
+        "dental": "waived",
+        "vision": "waived",
+        "retirement_contribution": "waived"
+      }
+    },
+    {
+      "employee_id": "EMP-007",
+      "name": "Chloe Bennett",
+      "department": "Sales",
+      "role": "Senior Account Executive",
+      "manager": "EMP-001",
+      "office_location": "Chicago, IL",
+      "employment_type": "full-time",
+      "hire_date": "2022-02-14",
+      "tenure_months": 31,
+      "pto_balance": {
+        "accrued_days": 24,
+        "used_days": 14,
+        "remaining_days": 10
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "enrolled",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-008",
+      "name": "Tariq Washington",
+      "department": "Customer Support",
+      "role": "Support Representative",
+      "manager": "EMP-007",
+      "office_location": "Austin, TX",
+      "employment_type": "part-time",
+      "hire_date": "2023-08-10",
+      "tenure_months": 13,
+      "pto_balance": {
+        "accrued_days": 8,
+        "used_days": 3,
+        "remaining_days": 5
+      },
+      "benefits": {
+        "health_plan": "waived",
+        "dental": "waived",
+        "vision": "waived",
+        "retirement_contribution": "waived"
+      }
+    },
+    {
+      "employee_id": "EMP-009",
+      "name": "Elena Rostova",
+      "department": "Product",
+      "role": "Senior Product Manager",
+      "manager": "EMP-001",
+      "office_location": "San Francisco, CA",
+      "employment_type": "full-time",
+      "hire_date": "2021-08-01",
+      "tenure_months": 37,
+      "pto_balance": {
+        "accrued_days": 25,
+        "used_days": 17,
+        "remaining_days": 8
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "enrolled",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-010",
+      "name": "Jordan Miller",
+      "department": "Finance",
+      "role": "Financial Analyst",
+      "manager": "EMP-001",
+      "office_location": "New York, NY",
+      "employment_type": "full-time",
+      "hire_date": "2023-01-09",
+      "tenure_months": 20,
+      "pto_balance": {
+        "accrued_days": 18,
+        "used_days": 5,
+        "remaining_days": 13
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "waived",
+        "vision": "enrolled",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-011",
+      "name": "Rachel Adams",
+      "department": "Legal & Compliance",
+      "role": "Compliance Officer",
+      "manager": "EMP-001",
+      "office_location": "New York, NY",
+      "employment_type": "full-time",
+      "hire_date": "2022-05-15",
+      "tenure_months": 28,
+      "pto_balance": {
+        "accrued_days": 20,
+        "used_days": 2,
+        "remaining_days": 18
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "enrolled",
+        "retirement_contribution": "enrolled"
+      }
+    },
+    {
+      "employee_id": "EMP-012",
+      "name": "Samir Hassan",
+      "department": "Engineering",
+      "role": "Data Engineer",
+      "manager": "EMP-002",
+      "office_location": "Austin, TX",
+      "employment_type": "full-time",
+      "hire_date": "2024-05-01",
+      "tenure_months": 4,
+      "pto_balance": {
+        "accrued_days": 6,
+        "used_days": 6,
+        "remaining_days": 0
+      },
+      "benefits": {
+        "health_plan": "enrolled",
+        "dental": "enrolled",
+        "vision": "waived",
+        "retirement_contribution": "enrolled"
+      }
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "evaluation_timestamp": "2026-09-27T13:24:17Z",
+  "primary_evaluation": {
+    "config": {
+      "retrieval_k": 5,
+      "similarity_threshold": 0.08
+    },
+    "metrics": {
+      "total_questions": 25,
+      "pass_rate": 0.52,
+      "groundedness_score": 0.692,
+      "citation_accuracy_score": 0.6,
+      "tool_selection_accuracy": 0.875,
+      "workflow_completion_rate": 1.0,
+      "action_safety_pass_rate": 1.0,
+      "latency_p50_ms": 5.64,
+      "latency_p95_ms": 12.16
+    },
+    "per_question_results": [
+      {
+        "id": "Q01",
+        "category": "straightforward_policy",
+        "query": "How many days of unused PTO can an employee carry over into the next year?",
+        "passed": false,
+        "groundedness": 0.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 3.86
+      },
+      {
+        "id": "Q02",
+        "category": "straightforward_policy",
+        "query": "What is the maximum nightly hotel rate reimbursable in Tier 1 cities like New York and San Francisco?",
+        "passed": false,
+        "groundedness": 0.3333,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 10.78
+      },
+      {
+        "id": "Q03",
+        "category": "straightforward_policy",
+        "query": "What is the company 401(k) retirement matching formula and maximum match percentage?",
+        "passed": false,
+        "groundedness": 0.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 2.6
+      },
+      {
+        "id": "Q04",
+        "category": "straightforward_policy",
+        "query": "How long does paid parental leave last for eligible parents?",
+        "passed": false,
+        "groundedness": 0.6667,
+        "citation_accuracy": 0.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 5.3
+      },
+      {
+        "id": "Q05",
+        "category": "straightforward_policy",
+        "query": "What is the annual individual learning and development stipend amount?",
+        "passed": true,
+        "groundedness": 0.6667,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 9.03
+      },
+      {
+        "id": "Q06",
+        "category": "multi_document",
+        "query": "If I am approved for remote work, what equipment expenses or home office stipends can I claim, and what security standards apply?",
+        "passed": false,
+        "groundedness": 0.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 2.62
+      },
+      {
+        "id": "Q07",
+        "category": "multi_document",
+        "query": "How does voluntary resignation affect my final PTO payout and health insurance coverage?",
+        "passed": true,
+        "groundedness": 0.75,
+        "citation_accuracy": 0.75,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 6.32
+      },
+      {
+        "id": "Q08",
+        "category": "multi_document",
+        "query": "What is the policy for reporting misconduct or harassment, and what retaliation protections exist?",
+        "passed": true,
+        "groundedness": 0.75,
+        "citation_accuracy": 0.75,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 8.44
+      },
+      {
+        "id": "Q09",
+        "category": "multi_document",
+        "query": "Can an employee on a Performance Improvement Plan (PIP) apply for remote work or receive a promotion?",
+        "passed": false,
+        "groundedness": 0.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 3.04
+      },
+      {
+        "id": "Q10",
+        "category": "tool_workflow",
+        "query": "What is my PTO balance and can I take 2 days off? I am Eleanor Vance EMP-001",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "check_pto_balance",
+          "search_policy_documents"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "check_pto_balance",
+          "search_policy_documents"
+        ],
+        "latency_ms": 9.86
+      },
+      {
+        "id": "Q11",
+        "category": "tool_workflow",
+        "query": "Check PTO balance for Marcus Chen EMP-002 and instructions to request 3 days off",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "check_pto_balance",
+          "search_policy_documents"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "check_pto_balance",
+          "search_policy_documents"
+        ],
+        "latency_ms": 8.71
+      },
+      {
+        "id": "Q12",
+        "category": "tool_workflow",
+        "query": "I want to request 4 days off, my employee ID is Sophia Rodriguez EMP-003",
+        "passed": true,
+        "groundedness": 0.8,
+        "citation_accuracy": 0.5,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "check_pto_balance",
+          "search_policy_documents"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "check_pto_balance",
+          "search_policy_documents"
+        ],
+        "latency_ms": 12.16
+      },
+      {
+        "id": "Q13",
+        "category": "tool_workflow",
+        "query": "Am I eligible for remote work? My employee ID is EMP-002",
+        "passed": false,
+        "groundedness": 1.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "latency_ms": 8.62
+      },
+      {
+        "id": "Q14",
+        "category": "tool_workflow",
+        "query": "Check remote work eligibility for Liam Gallagher EMP-004",
+        "passed": false,
+        "groundedness": 1.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "latency_ms": 8.81
+      },
+      {
+        "id": "Q15",
+        "category": "tool_workflow",
+        "query": "Can Amina Patel EMP-005 work from home remotely?",
+        "passed": false,
+        "groundedness": 1.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "latency_ms": 12.56
+      },
+      {
+        "id": "Q16",
+        "category": "tool_workflow",
+        "query": "Is David Kim EMP-006 eligible for corporate remote work agreements?",
+        "passed": false,
+        "groundedness": 1.0,
+        "citation_accuracy": 0.0,
+        "expected_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "actual_tools": [
+          "lookup_employee_profile",
+          "search_policy_documents",
+          "check_policy_compliance"
+        ],
+        "latency_ms": 10.24
+      },
+      {
+        "id": "Q17",
+        "category": "ambiguous_query",
+        "query": "What is my PTO balance?",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 2.7
+      },
+      {
+        "id": "Q18",
+        "category": "ambiguous_query",
+        "query": "Can I work remotely?",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 5.41
+      },
+      {
+        "id": "Q19",
+        "category": "ambiguous_query",
+        "query": "I want to take some time off next month",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 3.09
+      },
+      {
+        "id": "Q20",
+        "category": "ambiguous_query",
+        "query": "How many days leave do I have left? My name is Alex Unknown",
+        "passed": false,
+        "groundedness": 0.3333,
+        "citation_accuracy": 1.0,
+        "expected_tools": [
+          "lookup_employee_profile"
+        ],
+        "actual_tools": [],
+        "latency_ms": 2.74
+      },
+      {
+        "id": "Q21",
+        "category": "out_of_scope",
+        "query": "How do I change the oil in a 2018 Honda Civic?",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 2.67
+      },
+      {
+        "id": "Q22",
+        "category": "out_of_scope",
+        "query": "What is the capital city of Australia?",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 2.17
+      },
+      {
+        "id": "Q23",
+        "category": "out_of_scope",
+        "query": "Can you give me a recipe for chocolate chip cookies?",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 5.64
+      },
+      {
+        "id": "Q24",
+        "category": "out_of_scope",
+        "query": "Who won the World Cup in 1998?",
+        "passed": true,
+        "groundedness": 1.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 3.47
+      },
+      {
+        "id": "Q25",
+        "category": "out_of_scope",
+        "query": "What is the current price of Bitcoin and Ethereum cryptocurrency?",
+        "passed": false,
+        "groundedness": 0.0,
+        "citation_accuracy": 1.0,
+        "expected_tools": [],
+        "actual_tools": [],
+        "latency_ms": 6.14
+      }
+    ]
+  },
+  "ablation_comparison": {
+    "groundedness_delta": 0.02,
+    "citation_accuracy_delta": 0.03,
+    "primary_config": {
+      "retrieval_k": 5,
+      "similarity_threshold": 0.08
+    },
+    "ablation_config": {
+      "retrieval_k": 3,
+      "similarity_threshold": 0.15
+    }
+  }
+}

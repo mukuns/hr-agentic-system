@@ -1,0 +1,242 @@
+[
+  {
+    "id": "Q01",
+    "category": "straightforward_policy",
+    "query": "How many days of unused PTO can an employee carry over into the next year?",
+    "expected_answer_elements": ["five", "5 days", "carry over", "forfeited"],
+    "expected_citations": [
+      {"doc_title": "Paid Time Off (PTO) and Leave Policy", "section": "4.1 Year-End Rollover Limits"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q02",
+    "category": "straightforward_policy",
+    "query": "What is the maximum nightly hotel rate reimbursable in Tier 1 cities like New York and San Francisco?",
+    "expected_answer_elements": ["$300", "300", "Tier 1"],
+    "expected_citations": [
+      {"doc_title": "Business Travel and Expense Reimbursement Policy", "section": "3.2 Lodging and Hotel Guidelines"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q03",
+    "category": "straightforward_policy",
+    "query": "What is the company 401(k) retirement matching formula and maximum match percentage?",
+    "expected_answer_elements": ["100%", "4%", "50%", "5%"],
+    "expected_citations": [
+      {"doc_title": "Employee Benefits and Retirement Guide", "section": "4.2 Company Matching Contribution"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q04",
+    "category": "straightforward_policy",
+    "query": "How long does paid parental leave last for eligible parents?",
+    "expected_answer_elements": ["12 weeks", "twelve", "100%"],
+    "expected_citations": [
+      {"doc_title": "Parental Leave, Family Medical Leave (FMLA), and Statutory Absences", "section": "2.2 Leave Duration and Benefit Structure"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q05",
+    "category": "straightforward_policy",
+    "query": "What is the annual individual learning and development stipend amount?",
+    "expected_answer_elements": ["$2,500", "2500", "calendar year"],
+    "expected_citations": [
+      {"doc_title": "Professional Development, Tuition Assistance, and Continuous Learning Policy", "section": "2.1 Stipend Allocation and Eligible Expenditures"}
+    ],
+    "expected_tool_sequence": []
+  },
+
+  {
+    "id": "Q06",
+    "category": "multi_document",
+    "query": "If I am approved for remote work, what equipment expenses or home office stipends can I claim, and what security standards apply?",
+    "expected_answer_elements": ["stipend", "ergonomic", "VPN", "security", "hardware"],
+    "expected_citations": [
+      {"doc_title": "Workplace Health, Safety, and Ergonomics Policy", "section": "2.2 Remote Ergonomic Stipend and Equipment Allowance"},
+      {"doc_title": "IT Security, Equipment, and Acceptable Use Policy", "section": "4.1 Corporate VPN Requirement"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q07",
+    "category": "multi_document",
+    "query": "How does voluntary resignation affect my final PTO payout and health insurance coverage?",
+    "expected_answer_elements": ["accrued", "final paycheck", "COBRA", "coverage"],
+    "expected_citations": [
+      {"doc_title": "Paid Time Off (PTO) and Leave Policy", "section": "6. Separation of Employment"},
+      {"doc_title": "Employee Separation, Offboarding, and Severance Administration Policy", "section": "4.3 Final Pay Distribution"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q08",
+    "category": "multi_document",
+    "query": "What is the policy for reporting misconduct or harassment, and what retaliation protections exist?",
+    "expected_answer_elements": ["retaliation", "prohibit", "EthicsPoint", "confidential"],
+    "expected_citations": [
+      {"doc_title": "Employee Code of Conduct and Professional Ethics", "section": "5.2 Strict Non-Retaliation Policy"},
+      {"doc_title": "Whistleblower Protection, Internal Investigations, and Retaliation Prevention Policy", "section": "4.1 Retaliation Protection Safeguards"}
+    ],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q09",
+    "category": "multi_document",
+    "query": "Can an employee on a Performance Improvement Plan (PIP) apply for remote work or receive a promotion?",
+    "expected_answer_elements": ["ineligible", "PIP", "satisfactory", "Performance"],
+    "expected_citations": [
+      {"doc_title": "Remote and Hybrid Work Policy", "section": "2.4 Performance and Disciplinary Standing"},
+      {"doc_title": "Performance Management, Promotion, and Performance Improvement Policy", "section": "3.1 Eligibility Pre-requisites"}
+    ],
+    "expected_tool_sequence": []
+  },
+
+  {
+    "id": "Q10",
+    "category": "tool_workflow",
+    "query": "What is my PTO balance and can I take 2 days off? I am Eleanor Vance EMP-001",
+    "expected_answer_elements": ["Eleanor Vance", "15 days", "Balance", "Confirmation"],
+    "expected_citations": [
+      {"doc_title": "Paid Time Off (PTO) and Leave Policy", "section": "3.1 Notice Requirements"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "check_pto_balance", "search_policy_documents"]
+  },
+  {
+    "id": "Q11",
+    "category": "tool_workflow",
+    "query": "Check PTO balance for Marcus Chen EMP-002 and instructions to request 3 days off",
+    "expected_answer_elements": ["Marcus Chen", "16 days", "Confirmation"],
+    "expected_citations": [
+      {"doc_title": "Paid Time Off (PTO) and Leave Policy", "section": "3.1 Notice Requirements"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "check_pto_balance", "search_policy_documents"]
+  },
+  {
+    "id": "Q12",
+    "category": "tool_workflow",
+    "query": "I want to request 4 days off, my employee ID is Sophia Rodriguez EMP-003",
+    "expected_answer_elements": ["Sophia Rodriguez", "Insufficient", "0 days", "Shortfall", "Unpaid Leave"],
+    "expected_citations": [
+      {"doc_title": "Paid Time Off (PTO) and Leave Policy", "section": "5.2 Handling Shortfalls and Unpaid Leave Options"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "check_pto_balance", "search_policy_documents"]
+  },
+  {
+    "id": "Q13",
+    "category": "tool_workflow",
+    "query": "Am I eligible for remote work? My employee ID is EMP-002",
+    "expected_answer_elements": ["ELIGIBLE", "Marcus Chen", "Next Steps", "41 months"],
+    "expected_citations": [
+      {"doc_title": "Remote and Hybrid Work Policy", "section": "2. Remote Work Eligibility Criteria"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "search_policy_documents", "check_policy_compliance"]
+  },
+  {
+    "id": "Q14",
+    "category": "tool_workflow",
+    "query": "Check remote work eligibility for Liam Gallagher EMP-004",
+    "expected_answer_elements": ["PARTIALLY ELIGIBLE", "Liam Gallagher", "3 months", "hybrid"],
+    "expected_citations": [
+      {"doc_title": "Remote and Hybrid Work Policy", "section": "3.3 Partial Eligibility Determination"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "search_policy_documents", "check_policy_compliance"]
+  },
+  {
+    "id": "Q15",
+    "category": "tool_workflow",
+    "query": "Can Amina Patel EMP-005 work from home remotely?",
+    "expected_answer_elements": ["INELIGIBLE", "Amina Patel", "Facilities Operations Specialist", "On-site"],
+    "expected_citations": [
+      {"doc_title": "Remote and Hybrid Work Policy", "section": "2.3 Role Compatibility and Operational Feasibility"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "search_policy_documents", "check_policy_compliance"]
+  },
+  {
+    "id": "Q16",
+    "category": "tool_workflow",
+    "query": "Is David Kim EMP-006 eligible for corporate remote work agreements?",
+    "expected_answer_elements": ["INELIGIBLE", "contractor", "David Kim"],
+    "expected_citations": [
+      {"doc_title": "Remote and Hybrid Work Policy", "section": "2.1 Employment Type Requirement"}
+    ],
+    "expected_tool_sequence": ["lookup_employee_profile", "search_policy_documents", "check_policy_compliance"]
+  },
+
+  {
+    "id": "Q17",
+    "category": "ambiguous_query",
+    "query": "What is my PTO balance?",
+    "expected_answer_elements": ["Employee ID", "verify your identity", "full name"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q18",
+    "category": "ambiguous_query",
+    "query": "Can I work remotely?",
+    "expected_answer_elements": ["Employee ID", "records", "tenure"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q19",
+    "category": "ambiguous_query",
+    "query": "I want to take some time off next month",
+    "expected_answer_elements": ["Employee ID", "provide your Employee ID"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q20",
+    "category": "ambiguous_query",
+    "query": "How many days leave do I have left? My name is Alex Unknown",
+    "expected_answer_elements": ["unable to verify", "double-check", "Employee ID"],
+    "expected_citations": [],
+    "expected_tool_sequence": ["lookup_employee_profile"]
+  },
+
+  {
+    "id": "Q21",
+    "category": "out_of_scope",
+    "query": "How do I change the oil in a 2018 Honda Civic?",
+    "expected_answer_elements": ["outside the scope", "HR policies"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q22",
+    "category": "out_of_scope",
+    "query": "What is the capital city of Australia?",
+    "expected_answer_elements": ["outside the scope", "HR policies"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q23",
+    "category": "out_of_scope",
+    "query": "Can you give me a recipe for chocolate chip cookies?",
+    "expected_answer_elements": ["outside the scope", "HR policies"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q24",
+    "category": "out_of_scope",
+    "query": "Who won the World Cup in 1998?",
+    "expected_answer_elements": ["outside the scope", "HR policies"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  },
+  {
+    "id": "Q25",
+    "category": "out_of_scope",
+    "query": "What is the current price of Bitcoin and Ethereum cryptocurrency?",
+    "expected_answer_elements": ["outside the scope", "HR policies"],
+    "expected_citations": [],
+    "expected_tool_sequence": []
+  }
+]
